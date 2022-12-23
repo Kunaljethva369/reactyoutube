@@ -1,20 +1,12 @@
-.vid-container {
-  position: relative;
-  height: 0;
-  width: 100%;
-  float: left;
-}
-
 .vid-list-container {
   width: 100%;
   height: 365px;
-  overflow: hidden;
-  float: right;
 }
 
 .vid-outer .vid-inner {
-  margin-bottom: 2.5rem;
   display: flex;
+  margin-bottom: 2.5rem;
+  cursor: pointer;
 }
 
 .vid-outer .vid-inner .desc{

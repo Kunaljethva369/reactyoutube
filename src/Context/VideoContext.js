@@ -1,4 +1,8 @@
-[
+import { createContext, useContext } from "react";
+
+const videoContext = createContext();
+
+var response = [
   {
     kind: "youtube#searchListResponse",
     etag: "XHEWPfr9bzBvDPD4z_SYh90_mLI",
@@ -187,3 +191,16 @@
     ],
   },
 ];
+
+const AppProivder = (children) => {
+    return(
+        <videoContext.Provider value={response}>{children}</videoContext.Provider>
+    )
+};
+
+const UseContextProvider = () =>{
+    const productContext = useContext(AppProivder);
+    return productContext;
+}
+
+export default UseContextProvider;
