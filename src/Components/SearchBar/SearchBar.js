@@ -17,11 +17,23 @@ function SearchBar() {
     searchBar.setSideClick(false);
   }
 
+  const ifEnterPressed = (event) => {
+    if (event.callback.keyCode == 13) {
+      if (searchBar.input.search != '') {
+        searchBar.getData();
+        searchBar.setSideClick(false);
+      }
+      else {
+        alert("Plese Entet Your Topic");
+      }
+    }
+  }
+
   return (
     <>
       <header>
         <div className="search-area">
-          <input type="text" placeholder="Search" value={searchBar.input.search} onChange={handleInput} />
+          <input type="text" placeholder="Search" onKeyUp={(event) => ifEnterPressed({ callback: event })} value={searchBar.input.search} onChange={handleInput} />
           <button type="submit" onClick={handleChange}>
             <FaSearch />
           </button>

@@ -14,8 +14,24 @@
 }
 
 .vid-outer .vid-inner .desc .hideExtra {
-  width: 20rem;
   white-space: nowrap;
+  display: flex;
+  width: 20rem;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+@media only screen and (max-width:1400px) {
+  .vid-outer .vid-inner .desc .hideExtra {
+    width: 12rem !important;
+  }
+}
+
+@media only screen and (max-width:992px) {
+  .vid-outer .vid-inner .desc .hideExtra {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+    white-space: pre-wrap !important;
+  }
 }

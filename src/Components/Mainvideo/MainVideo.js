@@ -27,16 +27,15 @@ function MainVideo() {
       <div className="container w-100">
         <div className="row">
           <div className="d-flex">
-            <div className="mainVideo">
+            <div className="mainVideo col-lg-8">
               <div className="vid-container">
                 <iframe
-                  width="859"
-                  height="460"
                   src={currentVideos1}
+                  className="iframe"
                 ></iframe>
               </div>
             </div>
-            <div className="sideVideo">
+            <div className="sideVideo col-lg-4">
               <SideVideo />
             </div>
           </div>
