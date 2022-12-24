@@ -13,8 +13,8 @@ function SearchBar() {
   }
 
   const handleChange = () => {
-    console.log(searchBar.input.search);
     searchBar.getData();
+    searchBar.setSideClick(false);
   }
 
   return (
