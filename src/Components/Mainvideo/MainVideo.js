@@ -9,12 +9,12 @@ function MainVideo() {
   var currentVideos1;
   var currentVideos1 = `https://www.youtube.com/embed/${currentVideos}?autoplay=1&mute=1`;
   if (mainVideoData.sideClick == false) {
-    if (mainVideoData.response.lengh == undefined) {
+    if (Object.keys(mainVideoData.response).length > 0) {
       currentVideos = mainVideoData.response?.items[0]?.id?.videoId;
       currentVideos1 = `https://www.youtube.com/embed/${currentVideos}?autoplay=1&mute=1`
     }
     else {
-      currentVideos = mainVideoData.response?.items[0]?.id?.videoId;
+      currentVideos = mainVideoData.response[0]?.items[0]?.id?.videoId;
       currentVideos1 = `https://www.youtube.com/embed/${currentVideos}?autoplay=1&mute=1`
     }
   }
