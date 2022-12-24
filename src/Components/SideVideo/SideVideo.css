@@ -9,7 +9,13 @@
   cursor: pointer;
 }
 
-.vid-outer .vid-inner .desc{
+.vid-outer .vid-inner .desc {
   padding-left: 0.7rem;
 }
 
+.vid-outer .vid-inner .desc .hideExtra {
+  width: 20rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

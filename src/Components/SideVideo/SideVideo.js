@@ -24,7 +24,9 @@ function SideVideo() {
                         width="72"
                         src={ele.snippet.thumbnails.default.url}
                       />
-                      <div className="desc">{ele.snippet.title}</div>
+                      <div className="desc">
+                        <p className="hideExtra">{ele.snippet.title}</p>
+                      </div>
                     </div>
                   </>
                 );
