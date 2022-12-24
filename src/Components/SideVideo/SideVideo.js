@@ -1,28 +1,25 @@
 import React from "react";
+import { useVideoHook } from "../../Context/VideoContext";
 import "./SideVideo.css";
 
-function SideVideo(props) {
-  console.log(props.videos)
-  const handleClick = (ele) => {
-    console.log(props.videos);
-    props?.videoClick(ele)
-    props.setClick.setClick(true);
-  };
+function SideVideo() {
+  const sideVideoData = useVideoHook();
+  console.log(sideVideoData);
+  const handleClick = (e) => {
+    sideVideoData.setSideClick(true);
+    sideVideoData.setSideMainVideo(e);
+  }
 
   return (
     <>
       <div className="vid-list-container">
         <div className="vid-outer">
-          {props.videos[0]?.items?.length > 0
-            ? props.videos[0]?.items.map(function (ele, ind) {
+          {
+            sideVideoData?.response[0]?.items?.length > 0 ?
+              sideVideoData?.response[0]?.items.map(function (ele, ind) {
                 return (
                   <>
-                    <div
-                      className="vid-inner"
-                      onClick={() => {
-                        handleClick(ele);
-                      }}
-                    >
+                    <div className="vid-inner" onClick={() => { handleClick(ele) }}>
                       <span className="vid-thumb"></span>
                       <img
                         width="72"
@@ -33,7 +30,7 @@ function SideVideo(props) {
                   </>
                 );
               })
-            : "Loading"}
+              : 'Loading...'}
         </div>
       </div>
     </>
