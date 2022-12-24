@@ -15,8 +15,8 @@ function SideVideo() {
       <div className="vid-list-container">
         <div className="vid-outer">
           {
-            sideVideoData?.response[0]?.items?.length > 0 ?
-              sideVideoData?.response[0]?.items.map(function (ele, ind) {
+            sideVideoData?.response?.items?.length > 0 ?
+              sideVideoData?.response?.items.map(function (ele, ind) {
                 return (
                   <>
                     <div className="vid-inner" onClick={() => { handleClick(ele) }}>

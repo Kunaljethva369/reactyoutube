@@ -9,8 +9,14 @@ function MainVideo() {
   var currentVideos1;
   var currentVideos1 = `https://www.youtube.com/embed/${currentVideos}?autoplay=1&mute=1`;
   if (mainVideoData.sideClick == false) {
-    currentVideos = mainVideoData.response[0]?.items[0]?.id?.videoId;
-    currentVideos1 = `https://www.youtube.com/embed/${currentVideos}?autoplay=1&mute=1`
+    if (mainVideoData.response.lengh == undefined) {
+      currentVideos = mainVideoData.response?.items[0]?.id?.videoId;
+      currentVideos1 = `https://www.youtube.com/embed/${currentVideos}?autoplay=1&mute=1`
+    }
+    else {
+      currentVideos = mainVideoData.response?.items[0]?.id?.videoId;
+      currentVideos1 = `https://www.youtube.com/embed/${currentVideos}?autoplay=1&mute=1`
+    }
   }
   else {
     currentVideos = mainVideoData.sideMainVideo.id.videoId
