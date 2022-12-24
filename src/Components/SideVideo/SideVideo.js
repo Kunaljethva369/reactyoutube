@@ -4,7 +4,6 @@ import "./SideVideo.css";
 
 function SideVideo() {
   const sideVideoData = useVideoHook();
-  console.log(sideVideoData);
   const handleClick = (e) => {
     sideVideoData.setSideClick(true);
     sideVideoData.setSideMainVideo(e);
